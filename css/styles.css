@@ -1,4 +1,4 @@
-/* http://meyerweb.com/eric/tools/css/reset/
+/* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
 */
@@ -12,8 +12,8 @@ b, u, i, center,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
 	margin: 0;
@@ -24,7 +24,7 @@ time, mark, audio, video {
 	vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure,
+article, aside, details, figcaption, figure, 
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
@@ -46,91 +46,516 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
-/* GENERIC STYLES */
-body{
-    background-color: white;
-    font-family: 'Open Sans', sans-serif;
-    font-size: 14px;
-    line-height: 1.5;
-    color: black;
-}
-h1{
-    font-size: 71px;
-    font-weight: bold;
-    line-height: 106 px;
-    margin-bottom: 18px;
-}
-h2{
-    font-size: 48px;
-    font-weight: bold;
-    line-height: 106 px;
-    color: black;
-    margin-bottom: 12px;
+
+/*** --------Generic styles --------***/
+
+body {
+	font-family: 'Open Sans', sans-serif;
+	font-size: 14px; /* this is 1 em */
+	line-height: 1.5;
+	font-weight: 400;
+	color: #000000;
+	border: 0;
+    }
+
+h1 {
+	font-weight: 700;
+	font-size: 78px;
+	line-height: 106px;
+	color: white;
+	margin-bottom: 18px;
 }
 
-/* h3  h4 ... et  */
- p {
-    margin-bottom: 1em;
-    /* font size is 14 px , so 1em = 14px */
- }
- img{
-    max-width: 100%;
-    height: auto;
- }
- nav{
-    background-color: #222222;
-    padding-top: 14px;
- }
- .container{
-    padding: 14px;
- }
-  .logo{
+h2 {
+	font-weight: 700;
+	font-size: 48px;
+	line-height: 1.5;
+	margin-bottom: 12px;
+}
+
+h3 {
+	margin: 28px auto 0px 14px;
+	font-size: 28px;
+	font-weight: 700;
+}
+
+h4 {
+	font-size: 16px;
+	font-weight: 700;
+    padding-left: 14px;
+}
+
+p {
+	margin-bottom: 1em;
+    line-height: normal;
+}
+
+a:link,
+nav a:visited {
+	font-size: large;
+	font-weight: 500;
+	text-decoration: none;
+	padding: 1.5em;
+}
+
+.container {
+	padding: 14px;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+
+/**-------Header --------**/
+
+header {
+	background-color: #222222;
+}
+
+/**---------- Navbar-------**/
+
+nav .container {
+	display: flex;
+	flex-flow: column wrap;
+}
+
+#logo {
     background-color: #c78b07;
- padding-bottom:20px;
+    width: 100%;
+    padding-top: 20px;
 }
-nav li {
-    display: block;
-   }
+
 nav a:link,
-nav a:visited{
-    font-size: 18px;
-    text-align: center;
-    color: #c78b07;
-    display:block;
+nav a:visited {
+	color: #c78b07;
+	display: block;
+	text-align: center;
+	padding: 17px 0;
+	margin: 0px auto;
     text-decoration: none;
-    padding-bottom: 17px;
-    padding-top: 17px;
 }
+
 nav .current a:link,
-nav .current a:visited{
-    color:black;
-    background-color:  #c78b07;
+nav .current a:visited {
+	background-color: #c78b07;
+	color: #222222;
 }
-/* SECTION header-welcome */
-.header-welcome {
-background-image: url(../images/main-banner.jpg);
-background-size: cover;
-padding-top: 50px;
-padding-bottom: 50px;
 
+nav form {
+	width:100%;
+	display: flex;
 }
-.header-welcome .container{
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
+
+nav form input {
+	padding: 4px;
+	width: 100%	;
+	font-size: 1em;
 }
-/* SECTION ABOUT*/
+
+nav form button {
+	color: #c78b07;
+	border-radius: 0%;
+	border-color: #c78b07;
+	background-color: #222222;
+	width: 3em;
+}
+/**-----------Header welcome--------- **/
+
+header .header-welcome {
+	background-image: url("../images/main-banner.jpg");
+	background-size: cover;
+	background-position: center;
+	padding: 68px 0px;
+}
+
+header p {
+	font-size: 1em;
+	line-height: 1.5em;
+	color: white;
+	margin-bottom: 42px;
+}
+
+.header-welcome .container {
+	background-color: rgba(0, 0, 0, 0.5);
+	margin: 14px 0px;
+	padding: 50px 14px;
+}
+
+.header-welcome button {
+	background-color: #c78b07;
+	color: #222222;
+    width: 250px;
+    height: 93px;
+    font-size: large;
+}
+
+/** -----------Section About Us----------- **/
 .section-about{
+	background-color: #ffe6ac;
+}
+/** -----------Section services----------- **/
+.Service {
     background-color: #ffe6ac;
+	margin-top: 1em;
+	display: flex;
+	flex-direction: column;
+}
+.Service button{
+	background-color: #222222;
+	color: white;
+    width: auto;
+    padding: 14px;
+    height: 70px;
+	margin: 0px auto 14px 14px;
+    font-size: large;
+}
+.Service p{
+    margin: 1em;
 }
 
 
+/** -------------Section vision ------------ **/
 
-
-/* Desktop STYLES */
-@media screen  and (min-width: 1168px){
-
-.container{
-   width:1140px;
-   margin: 0 auto;
+.Vision .container {
+	background-image: url("../images/vision.jpg");
+	background-position: center;
+	display: flex;
+	flex-flow: column nowrap;
+	padding: 14px 0px;
 }
+
+.Vision h3 {
+	color: white;
+    }
+
+.Vision p {
+	color: white;
+	margin: 28px auto 14px 14px;
+    padding-left: 14px;
+}
+
+.Vision button {
+	background-image: linear-gradient(to right, #0e1728, #17304d);
+	color: white;
+    font-size: large;
+    border: #c78b07 1px solid;
+    width: 200px;
+    height: 80px;
+    margin-left: 14px;
+}
+
+.Service h4 {
+	border-bottom: #c78b07 solid 2px;
+	margin: 14px;
+	padding-bottom: 7px;
+}
+/** ----------Section Team ------------ **/
+.section-team img{
+    width: 100%;
+}
+
+/** ----------Section Contact ------------ **/
+
+.section-contact input {
+	margin-top: 12px;
+	margin-bottom: 10px;
+	width: 100%;
+    height: 1.5em;
+}
+
+textarea {
+    margin-top: 12px;
+	margin-bottom: 10px;
+	width: 100%;
+    height: 100px;
+}
+.section-contact button {
+	width: auto;
+	color: #c78b07;
+	background-color: #222222;
+	border: 1px solid #c78b07;
+	font-family: Helvetica, Arial, sans-serif;
+	font-size: 16px;
+	padding: 5px;
+}
+
+.section-contact table {
+	border-collapse: collapse;
+    width: 100%;
+    border: 1px solid black;
+	}
+
+.section-contact th {
+	background-color:#ffe6ac;
+	padding: 14px;
+	border-top: 1px solid black;
+	border-left: 1px solid black;
+	border-right: 1px solid black;
+}
+
+.section-contact td {
+	padding: 14px;
+	border: 1px solid black;
+}
+
+iframe {
+		width: 100%;
+		height: 100%;
+	}
+
+.map {
+	height: auto;
+	height: 450px;
+}
+
+/**----------footer styles-------------- **/
+
+footer {
+	background-color: #222222;
+}
+
+footer p {
+	color: #c78b07;
+	margin-top: 21px;
+}
+
+footer p a:link,
+footer p a:visited {
+	color: #c78b07;
+	font-size: 14px;
+	text-decoration: underline;
+	padding: 0px;
+	margin: 0px;
+}
+
+/**** ========================> Desktop <============================= ****/
+
+@media only screen and (min-width: 1200px) {
+	/*** Generic styles ***/
+
+	.container {
+		padding: 14px 135px;
+}
+
+	/**-------Header styles --------**/
+
+	header {
+		background-color: #222222;
+}
+
+	/**------------ Navbar---------- **/
+
+	nav .container{
+        display: flex;
+        justify-content: space-between;
+		flex-flow: row nowrap;
+		align-items: center;
+}
+
+	#logo {
+		width: 100px;
+		padding: 0px;
+		margin-right: 21px;
+}
+
+
+	nav form {
+		width: auto;
+		float: right
+}
+
+	nav ul {
+		display: flex;
+		flex-flow: row nowrap;
+		justify-content: space-between;
+		width: auto;
+}
+
+	nav ul li {
+		padding: 20px 0;
+		margin: 0;
+}
+
+	nav a:link,
+	nav a:visited {
+		color: #c78b07;
+		display: block;
+		text-align: center;
+		padding: 17px 21px;
+		margin: auto;
+}
+
+	nav .current a:link,
+    nav .current a:visited {
+		background-color: #c78b07;
+		color: #222222;
+        width: 70px;
+        height: 20px;
+}
+
+	nav form input {
+		padding: 0px;
+		width: 175px;
+		font-size: 1em;
+}
+
+	nav form button {
+		color: #c78b07;
+		border-radius: 0%;
+		border-color: #c78b07;
+		background-color: #222222;
+		width: 3em;
+}
+
+	/**-----------Header welcome--------- **/
+
+	header .header-welcome {
+		background-image: url("../images/main-banner.jpg");
+		background-size: cover;
+		background-position: center;
+		display: flex;
+		padding: 68px 136px;
+}
+
+	 header .header-welcome .container{
+		margin: 14px 0px;
+		padding: 50px 14px;
+}
+    /**----------Section About us-----------**/
+
+    .section-about .container {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+}
+
+    .AboutContent{
+        max-width: calc(50% - 14px);
+		margin-left: 14px;
+		margin-right: 14px;
+}
+	/** -----------Section Services---------- **/
+
+
+	.services{
+		display: block;
+		width: 300px;
+		height: auto;
+}
+
+	.section-services .container h2 {
+		grid-column-start: 1;
+		grid-column-end: 7;
+}
+
+	 .Service-Block-1 {
+		grid-column-start: 1;
+		grid-column-end: 4;
+}
+
+	 .Service-Block-2 {
+		grid-column-start: 4;
+		grid-column-end: 7;
+}
+
+	 .Service-Block-3 {
+		grid-column-start: 1;
+		grid-column-end: 3;
+}
+    .Service-Block-4 {
+		grid-column-start: 3;
+		grid-column-end: 5;
+}
+
+	.Service-Block-5 {
+		grid-column-start: 5;
+		grid-column-end: 7;
+}
+
+	.section-services .container {
+		display: grid;
+		grid-template-columns: repeat(6, 1fr);
+		column-gap: 14px;
+}
+    .Services {
+		display: flex;
+		width: auto;
+		height: auto;
+}
+/** -----------Section Vision-------- **/
+	.Vision .container {
+		background-size: cover;
+		padding: 14px 122px;
+}
+
+	.Vision .container p {
+		width: 100%;
+		margin-right: 14px;
+		margin-left: 14px;
+}
+
+    /**-----------Our Team-----------**/
+    .Info{
+		display: flex;
+		flex-wrap: nowrap;
+		align-items: center;
+		padding: 0px;
+		margin: 0px;
+}
+
+    .Info img {
+		width: 50%;
+		padding: 0px;
+		margin: 0px;
+}
+
+	.Info-Text{
+		max-width: calc(50% - 9px);
+		padding: 0px;
+		margin: auto;
+
+}
+	.BobInfo {
+		flex-flow: row-reverse nowrap;
+}
+/**-----------Section-Contact-----------**/
+    .section-contact .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    column-gap: 20px;
+    grid-template-areas:
+        'a b'
+        'a b'
+        'c c';
+}
+
+	.contact {
+		width: auto;
+		height: auto;
+}
+    .Contact-Block-1{
+    grid-area: a;
+}
+	.Contact-Block-2 {
+		grid-area: c;
+		padding-top: 28px;
+}
+
+	.Contact-Block-3 {
+        display: flex;
+		flex-direction: column;
+		grid-area: b;
+}
+	table {
+       	width: 100%;
+		border: 1px solid black;
+}
+
+	.map {
+		overflow: hidden;
+}
+
 }
